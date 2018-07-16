@@ -1,0 +1,50 @@
+﻿@model WebAppCantiere.Models.BuildingSiteModels.BuildingSiteModel
+
+@{
+    ViewData["Title"] = "Insert";
+}
+
+<h2>Insert</h2>
+
+<h4>BuildingSiteModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Insert" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerEMail" class="control-label"></label>
+                <input asp-for="CustomerEMail" class="form-control" />
+                <span asp-validation-for="CustomerEMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuildingSiteLocation" class="control-label"></label>
+                <input asp-for="BuildingSiteLocation" class="form-control" />
+                <span asp-validation-for="BuildingSiteLocation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Photos" class="control-label"></label>
+                <input asp-for="Photos" class="form-control" />
+                <span asp-validation-for="Photos" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

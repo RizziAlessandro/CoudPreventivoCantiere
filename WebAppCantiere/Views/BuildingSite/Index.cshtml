@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebAppCantiere.Models.BuildingSiteModels.BuildingSiteViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BuildingSiteLocation)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingSiteLocation)
+            </td>
+            <td>
+                @Html.ActionLink("Insert interventions", "Insert", "Intervention", new { id = item.Id }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
